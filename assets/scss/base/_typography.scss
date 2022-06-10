@@ -1,0 +1,136 @@
+html {
+    font-size: var(--base-font-size);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+    font: {
+        family: var(--ff-montserrat);
+        size: var(--fs-16);
+        weight: var(--fw-semibold);
+    }
+}
+
+:where(.nav-link) {
+    a {
+        text-transform: uppercase;
+    }
+}
+
+p {
+    font-family: var(--ff-catamaran);
+    line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--ff-montserrat);
+    line-height: 1;
+}
+
+/* Primary Title */
+h1 {
+    font-size: var(--fs-40);
+    font-weight: var(--fw-xBold);
+    color: var(--clr-primary-800);
+
+}
+
+h2 {
+    font: {
+        size: var(--fs-36);
+        weight: var(--fw-xBold);
+    }
+    color: var(--clr-secondary-700);
+    text-align: center;
+}
+
+h3 {
+    font-size: var(--fs-24);
+    color: var(--clr-primary-500);
+    font-weight: var(--fw-xBold);
+    color: var(--clr-primary-800);
+    text-align: center;
+}
+
+h4 {
+    font-size: var(--fs-24);
+    font-weight: var(--fw-xBold);
+    color: var(--clr-primary-800);
+    text-align: center;
+}
+
+p {
+    font-size: var(--fs-16);
+}
+
+@media (min-width: 768px) {
+    h2, h3, h4, h5 {
+        text-align: left;
+    }
+
+    h1 {
+        font-size:  var(--fs-48);
+        font-weight: var(--fw-xBold);
+    }
+
+    h2 {
+        font-size: var(--fs-40);
+    }
+
+    h3 {
+        font-size: var(--fs-36);
+    }
+
+    p {
+        font-size: var(--fs-18);
+    }
+}
+
+// Tablet and Desktop
+.home .xl-heading {
+    font-family: var(--ff-montserrat);
+    font-weight: 700;
+    
+    color: hsla(206, 76%, 23%, 0.1);
+}
+
+@media (max-width: 48rem) {
+    .home .xl-heading {
+        font-size: 3.75rem;
+        line-height: 1.1;
+    }
+}
+
+@media (min-width: 48.0625rem) {
+
+    // Tablet and Desktop
+    .home .xl-heading {
+        font-weight: 700;
+        font-size: 9.25rem;
+    }
+}
+
+.home .contact-title h3 {
+    font: {
+        size: var(--fs-48);
+        weight: var(--fw-xBold);
+    }
+    color: var(--clr-secondary-700);
+}
+
+.home .contact-info h4 {
+    font: {
+        size: var(--fs-24);
+    }
+}
+
+body:not(.home) .jumbotron h1 {
+    text-align: center;
+    margin-inline: auto;
+}

@@ -1,0 +1,21 @@
+.contact__form {
+    text-align: center;
+
+    background-color: white;
+    padding-top: 1.125rem;
+    padding-right: 1.125rem;
+    padding-left: 1.125rem;
+    border-radius: .25rem;
+
+    
+    
+    @media (min-width: 48.0625rem) {
+        box-shadow: 0px 0px 5px #000000;
+    }
+}
+
+.contact__form-textbox {
+        
+    box-shadow: -1px -1px 7px rgba(0, 0, 0, 0.14), inset -2px -2px 4px rgba(0, 0, 0, 0.28);
+    
+}

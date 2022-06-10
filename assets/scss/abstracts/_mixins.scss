@@ -1,0 +1,13 @@
+@use './breakpoints' as *;
+
+/// Mixin to manage responsive breakpoints
+// @author Kitty Giraudel
+@mixin respond-to($breakpoint) {
+
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    }
+}
