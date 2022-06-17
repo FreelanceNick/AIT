@@ -1,19 +1,38 @@
 <?php get_header(); ?>
     
     <div class="jumbotron" style="background-image: url(<?php the_field('jumbotron'); ?>);">
-        <div class="container-fluid">
-            <div class="row no-gutters justify-content-around">
-                <div class="col-sm-auto col-md-auto col-lg-5 col-xl-4 jumbotron__content-text">
-                    <div class="swiper-pagination"></div>
-                    <h1>
-                        Automate Your Healthcare Business
-                    </h1>
+        <div class="container">
+            <div class="row justify-content-around align-items-center no-gutters">
+                <div class="col-sm-12 col-md-5 jumbotron__content-text flow">
+                    
+                    <h1>Automate Your Healthcare Organization</h1>
                     <p id="sliderText"></p>
-                    <a href="/contact" class="btn btn--large btn--orange" type="button">Request a Demo</a>
-
+                    <div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </div>
-                <div class="col-12 col-lg-5 col-xl-4">
-                    <?php get_template_part('template-parts/section','slider'); ?>
+                
+                <div class="col-sm-12 col-md-7 col-lg-5 jumbotron__content-slides">
+                    <div class="swiper slide-decor">
+                        <div class="swiper-wrapper">
+            
+                            <?php if( have_rows('slider') ): ?>
+                                
+                                <?php while( have_rows('slider')): the_row(); 
+                                        $image = get_sub_field('image');  
+                                        $picture = $image['sizes']['large']; 
+                                        $description = get_sub_field('text');
+                                ?>
+                                    <div class="swiper-slide">
+
+                                        <img class="swiper-lazy sliderImg" data-src="<?php echo $picture; ?>" data-description="<?php echo $description; ?>" alt="">
+
+                                    </div>
+                                <?php endwhile; ?>
+
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

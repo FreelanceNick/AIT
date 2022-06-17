@@ -1,7 +1,5 @@
 <?php
 
-
-
     function nsaveleski_theme_support(){
 
         $defaults = array(
@@ -21,7 +19,6 @@
 
     add_action('after_setup_theme', 'nsaveleski_theme_support');
 
-
     function nsaveleski_register_styles(){
 
         wp_enqueue_style( 'naveleski-theme-styles', get_template_directory_uri() . "/dist/css/main.min.css", array('naveleski-bootstrap'), '1.0', 'all');
@@ -30,7 +27,6 @@
     }
 
     add_action( 'wp_enqueue_scripts', 'nsaveleski_register_styles');
-
 
     function nsaveleski_register_scripts(){
         wp_enqueue_script('nsaveleski-swiper', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array(), '8.0', true);

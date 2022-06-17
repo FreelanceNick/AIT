@@ -1,21 +1,35 @@
-.contact__form {
-    text-align: center;
+.wpforms-form input[type=submit], 
+.wpforms-form button[type=submit] {
 
-    background-color: white;
-    padding-top: 1.125rem;
-    padding-right: 1.125rem;
-    padding-left: 1.125rem;
-    border-radius: .25rem;
+    $border-radius: 0.25em;
+    $background-color: var(--blue-900);
+    $background-color--hover: var(--orange-700);
 
     
+
+    width: 100% !important;
+
+    background-color: var(--blue-900) !important;
+    border-radius: $border-radius !important;
+
+    color: var(--white) !important;
+
+    text-transform: uppercase !important;
     
-    @media (min-width: 48.0625rem) {
-        box-shadow: 0px 0px 5px #000000;
+    transition: background-color 0.25s !important;
+
+
+    // HOVER Styles
+    &:hover {
+
+        background-color: $background-color--hover !important;
+
+        transition: background-color 0.25s !important;
     }
-}
 
-.contact__form-textbox {
+
+    // FOCUS Styles
+    &:focus {
         
-    box-shadow: -1px -1px 7px rgba(0, 0, 0, 0.14), inset -2px -2px 4px rgba(0, 0, 0, 0.28);
-    
+    }
 }

@@ -18,6 +18,10 @@
 # Node
 node_modules/
 
+purgecss.config.js
+
+*.map
+
 # Configuration
 wp-config.php
 

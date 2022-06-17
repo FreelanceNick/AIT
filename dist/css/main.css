@@ -24,11 +24,18 @@
   --clr-primary-500: hsla(206, 76%, 23%, 1);
   --clr-primary-100: hsla(206, 30%, 92%, 1);
   --clr-secondary-700: hsla(36, 100%, 48%, 1);
+  --nav-height: calc(var(--logo-width) * 0.875 - 1px);
+  --step-0: clamp(1.00rem, calc(0.96rem + 0.19vw), 1.13rem);
+  --step-1: clamp(1.13rem, calc(0.99rem + 0.56vw), 1.50rem);
+  --step-2: clamp(1.27rem, calc(1.01rem + 1.10vw), 2.00rem);
+  --step-3: clamp(1.42rem, calc(0.99rem + 1.86vw), 2.66rem);
+  --step-4: clamp(1.60rem, calc(0.92rem + 2.93vw), 3.55rem);
   --blue-900: hwb(203 0% 75%);
   --blue-300: hwb(203 0% 20%);
   --blue-50: hwb(204 89% 3%);
   --orange-500: hwb(40 0% 0%);
   --orange-400: hwb(40 20% 0%);
+  --orange-700: hsla(36, 100%, 48%, 1);
   --white: hwb(0 100% 0%);
   --grey-50: hwb(0 97% 3%);
   --black: hwb(0 0% 100%);
@@ -618,61 +625,41 @@ a {
   color: var(--clr-secondary-700);
 }
 
-p {
-  font-family: var(--ff-catamaran);
-  line-height: 1.4;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5 {
   font-family: var(--ff-montserrat);
-  line-height: 1;
+  line-height: 1.1;
 }
 
 /* Primary Title */
 h1 {
-  font-size: var(--fs-40);
+  font-size: var(--step-4);
   font-weight: var(--fw-xBold);
-  color: var(--clr-primary-800);
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: var(--fs-36);
-  font-weight: var(--fw-xBold);
-  color: var(--clr-secondary-700);
-  text-align: center;
+  font-size: var(--step-3);
 }
 
 h3 {
-  font-size: var(--fs-24);
-  color: var(--clr-primary-500);
-  font-weight: var(--fw-xBold);
-  color: var(--clr-primary-800);
-  text-align: center;
+  font-size: var(--step-2);
 }
 
 h4 {
-  font-size: var(--fs-24);
-  font-weight: var(--fw-xBold);
-  color: var(--clr-primary-800);
-  text-align: center;
+  font-size: var(--step-1);
 }
 
 p {
-  font-size: var(--fs-16);
+  font-size: var(--step-0);
 }
 
 @media (min-width: 768px) {
   h2, h3, h4, h5 {
     text-align: left;
-  }
-
-  h1 {
-    font-size: var(--fs-48);
-    font-weight: var(--fw-xBold);
   }
 
   h2 {
@@ -742,9 +729,9 @@ body:not(.home) .jumbotron h1 {
 }
 .cta span {
   position: relative;
-  font-size: var(--fs-18);
+  font-size: var(--fs-);
   font-weight: var(--fw-bold);
-  line-height: calc(var(--fs-18) * 1.125);
+  line-height: calc(var(--fs-) * 1.125);
   letter-spacing: 0.25em;
 }
 .cta svg {
@@ -912,26 +899,22 @@ body:not(.home) .jumbotron h1 {
   }
 }
 
-.contact__form {
-  text-align: center;
-  background-color: white;
-  padding-top: 1.125rem;
-  padding-right: 1.125rem;
-  padding-left: 1.125rem;
-  border-radius: 0.25rem;
+.wpforms-form input[type=submit],
+.wpforms-form button[type=submit] {
+  width: 100% !important;
+  background-color: var(--blue-900) !important;
+  border-radius: 0.25em !important;
+  color: var(--white) !important;
+  text-transform: uppercase !important;
+  -webkit-transition: background-color 0.25s !important;
+  transition: background-color 0.25s !important;
 }
-@media (min-width: 48.0625rem) {
-  .contact__form {
-    -webkit-box-shadow: 0px 0px 5px #000000;
-            box-shadow: 0px 0px 5px #000000;
-  }
+.wpforms-form input[type=submit]:hover,
+.wpforms-form button[type=submit]:hover {
+  background-color: var(--orange-700) !important;
+  -webkit-transition: background-color 0.25s !important;
+  transition: background-color 0.25s !important;
 }
-
-.contact__form-textbox {
-  -webkit-box-shadow: -1px -1px 7px rgba(0, 0, 0, 0.14), inset -2px -2px 4px rgba(0, 0, 0, 0.28);
-          box-shadow: -1px -1px 7px rgba(0, 0, 0, 0.14), inset -2px -2px 4px rgba(0, 0, 0, 0.28);
-}
-
 .swiper-slide img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -992,7 +975,16 @@ body:not(.home) .jumbotron h1 {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
   background-color: var(--blue-50);
+}
+header.scrolling-active {
+  -webkit-box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
 .nav {
@@ -1024,7 +1016,8 @@ header {
     display: none;
   }
   .nav-menu {
-    margin-top: calc(var(--logo-width) * 0.875);
+    -webkit-margin-before: calc(var(--logo-width) * 0.875);
+            margin-block-start: calc(var(--logo-width) * 0.875);
     position: fixed;
     top: 0;
     right: 0;

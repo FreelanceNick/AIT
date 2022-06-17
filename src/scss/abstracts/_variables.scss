@@ -28,16 +28,29 @@
     --fw-semibold: 600;
     --fw-medium: 500;
     --fw-regular: 400;
-
+    
     // Colors - Primary
     --clr-primary-800: hsla(206, 91%, 8%);
     --clr-primary-500: hsla(206, 76%, 23%, 1);
     --clr-primary-100: hsla(206, 30%, 92%, 1);
-
+    
     // Colors - Secondary
     --clr-secondary-700: hsla(36, 100%, 48%, 1);
-
-
+    
+    
+    
+    // NEW STYLES -- BELOW THIS LINE
+    
+    --nav-height: calc(var(--logo-width) * 0.875 - 1px);
+    
+    // Typographic Scale
+    --step-0: clamp(1.00rem, calc(0.96rem + 0.19vw), 1.13rem);
+    --step-1: clamp(1.13rem, calc(0.99rem + 0.56vw), 1.50rem);
+    --step-2: clamp(1.27rem, calc(1.01rem + 1.10vw), 2.00rem);
+    --step-3: clamp(1.42rem, calc(0.99rem + 1.86vw), 2.66rem);
+    --step-4: clamp(1.60rem, calc(0.92rem + 2.93vw), 3.55rem);
+    
+    
     // Primary Colors
     --blue-900: hwb(203 0% 75%);
     --blue-300: hwb(203 0% 20%);
@@ -45,7 +58,8 @@
     
     --orange-500: hwb(40 0% 0%);
     --orange-400: hwb(40 20% 0%);
-
+    --orange-700: hsla(36, 100%, 48%, 1);
+    
     // Neutrals Colors
     --white: hwb(0 100% 0%);
     --grey-50: hwb(0 97% 3%);

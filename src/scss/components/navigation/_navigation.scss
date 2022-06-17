@@ -1,9 +1,5 @@
 @use '../../abstracts/mixins' as m;
 
-.scrolling-active {
-    box-shadow: ;
-}
-
 .logo {
     $logo-width: var(--logo-width);
 
@@ -28,6 +24,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+
+    z-index: 999;
     
     background-color: var(--blue-50);
 
@@ -81,7 +79,7 @@ header {
         // MOBILE MENU STYLE -- Change BELOW this line
         // Primary Menu Items (.nav-menu)
         &-menu {
-            margin-top: $nav-margin-top;
+            margin-block-start: $nav-margin-top;
             
             position: fixed;
             top: 0;
