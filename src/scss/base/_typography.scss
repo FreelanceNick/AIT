@@ -13,10 +13,9 @@ a {
     }
 }
 
-:where(.nav-link) {
-    a {
-        text-transform: uppercase;
-    }
+.menu-item a:focus,
+.menu-item a:hover {
+    color: var(--clr-secondary-700);
 }
 
 p {

@@ -38,7 +38,6 @@
     --clr-secondary-700: hsla(36, 100%, 48%, 1);
 
 
-    ///// UPDATED VARs
     // Primary Colors
     --blue-900: hwb(203 0% 75%);
     --blue-300: hwb(203 0% 20%);
@@ -49,13 +48,9 @@
 
     // Neutrals Colors
     --white: hwb(0 100% 0%);
-    --black: hwb(0 0% 100%);
+    --grey-50: hwb(0 97% 3%);
 
-    // Line-height
-    --line-height--110: 1.1;
-    --line-height--120: 1.2;
-    --line-height--130: 1.3;
-    --line-height--140: 1.4;
+    --black: hwb(0 0% 100%);
 
     // Images (logos, imgs, svg, etc.)
     --logo-width: clamp(6rem, 15vw, 7rem);
@@ -76,6 +71,8 @@
     --link-color--hover: var(--orange-500);
     --link-color--visited: var(--blue-900);
 
+
+    --ff-montserrat: 'Montserrat', sans-serif;
 
     // Wrappers
     --wrapper-padding: 1.5rem;

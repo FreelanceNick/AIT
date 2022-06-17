@@ -1,4 +1,4 @@
-const toggler = document.getElementById('toggler');
+const toggler = document.getElementById('ham');
 const menu = document.querySelector('.nav-menu');
 const header = document.querySelector('header');
 

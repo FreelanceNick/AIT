@@ -1,5 +1,9 @@
 @use '../abstracts/mixins' as m;
 
+#wpadminbar {
+    display: none;
+}
+
 .wrapper {
     $content-width:  75rem;
 
@@ -8,6 +12,7 @@
 
     &-sm-no-gutter {
         width: min(100%, $content-width);
+        margin-inline: auto;
     }
 
     &-sm {

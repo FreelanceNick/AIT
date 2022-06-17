@@ -1,27 +1,74 @@
-.btn {
+.cta {
 
-    display: inline-block;
-    $border-radius: 10rem;
+    $primary: var(--orange-500);
+    $transition: 0.35s;
+    $font-size: var(--fs-18);
+    $line-height: calc($font-size * 1.125);
+    $width: 3.5rem;
+    $border-radius: calc($width * 0.5);
 
-    border: none;   
-    border-radius: $border-radius;
-    text-align: center;
+    $font-weight-hover: var(--fw-bold);
 
-    cursor: pointer;
+    position: relative;
+    padding: 1.125em 1.25em;
+    transition: all 0.2s ease;
 
-    &--large a {
-        display: inline-block;
-        padding: 1rem 1.25rem;
-        color: white;
-        
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: $border-radius;
+        background-color: $primary;
+        width: $width;
+        height: $width;
+        opacity: 0.5;
+        transition: all $transition ease;
     }
 
-    &--orange {
-        background-color: #F59300;
+    span {
+        position: relative;
+
+        font: {
+            size: $font-size;
+            weight: $font-weight-hover;
+        }
+
+        line-height: $line-height;
+        letter-spacing: .25em;
     }
 
-    &:hover,
-    &:focus {
-        box-shadow: inset 0 0 4px 0 black;
+    svg {
+        position: relative;
+        top: 0;
+        margin-left: 10px;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: var(--blue-900);
+        stroke-width: 2;
+        transform: translateX(-5px);
+        transition: $transition;
+    }
+
+    &:hover {
+
+        &::before {
+            opacity: 0.8;
+            width: 100%;
+        }
+
+        svg {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        transition: $transition;
+    }
+
+    &:active {
+        transform: scale(0.96);
     }
 }

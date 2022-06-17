@@ -1,0 +1,45 @@
+@use '../abstracts/mixins' as m;
+
+.jumbotron {
+
+    position: relative;
+
+    &-wrapper {
+        outline: 1px solid red;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: space-between;
+
+        @include m.respond-to('xsmall-min') {
+            grid-template-columns: minmax(min(15rem, 100%), 34rem) minmax(min(15rem, 100%), 32rem);
+        }
+    }
+
+    &-text {
+
+        min-height: 17rem;
+        padding: clamp(1rem, 2.5%, 1.5rem);
+        background-color: var(--blue-50);
+    }
+
+    & > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+
+        z-index: -1;
+    }
+
+    @include m.respond-to('small-max') {
+        & > img {
+            display: none;
+        }
+    }
+}
+
+.swiper-slide img {
+    object-fit: cover;
+    width: 100%;
+}

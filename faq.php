@@ -76,22 +76,6 @@ get_header();
                         </div>
                     </div>
                 </div>
-
-                <div class="accordion__item">
-                    
-                    <button class="accordion__question" aria-expanded="false">
-                        What are the benefits of AIT automation?
-
-
-                        <span class="icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="accordion__collapse">
-                        <div class="accordion__content">
-                            Set-up can be completed in as little as a few days for existing processes and a few weeks for custom solutions.
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

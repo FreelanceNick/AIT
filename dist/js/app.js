@@ -1,5 +1,5 @@
 const toggler = document.getElementById('toggler');
-const menu = document.querySelector('.nav');
+const menu = document.querySelector('.nav-menu');
 const header = document.querySelector('header');
 
 
