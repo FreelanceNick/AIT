@@ -1,0 +1,21 @@
+@use '../abstracts/mixins' as m;
+
+.wrapper {
+    $content-width:  75rem;
+
+    width: min(100% - var(--wrapper-padding), $content-width);
+    margin-inline: auto;
+
+    &-sm-no-gutter {
+        width: min(100%, $content-width);
+    }
+
+    &-sm {
+        $content-width: 1000px;
+
+        width: min(100% - var(--wrapper-padding), $content-width);
+        margin-inline: auto;
+
+    }
+}
+

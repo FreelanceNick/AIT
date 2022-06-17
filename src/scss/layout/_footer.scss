@@ -1,0 +1,23 @@
+.footer {
+    min-height: 20rem;
+    padding-block: 4rem 2rem;
+
+    display: grid;
+    gap: 2rem;
+
+    .copyright p {
+        font-family: var(--ff-montserrat);
+        font-size: .8rem;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: .25rem;
+}

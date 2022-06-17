@@ -1,0 +1,142 @@
+@use '../../abstracts/mixins' as m;
+
+.header {
+    $logo-width: 140px;
+
+    
+    z-index: 9999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    padding-block: .5rem;
+    
+    background-color: white;
+    
+    box-shadow: unset;
+    transition: 0.2s;
+
+    .logo {
+
+        .custom-logo-link img[src$=".svg"] {
+            width: min(100%, $logo-width);
+            height: auto;
+        }
+    
+        width: min(100%, $logo-width);
+    }
+
+    .navbar {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+    }
+}
+
+
+
+
+// @media (max-width: 768px) {
+
+//     .logo {
+
+//         $logo-width: 100px;
+    
+//         .custom-logo-link img[src$=".svg"] {
+//             width: min(100%, $logo-width);
+//             height: auto;
+//         }
+    
+//         width: min(100%, $logo-width);
+//     }
+
+
+//     .navbar {
+//         flex-direction: row;
+//     }
+
+//     .nav-hamburger {
+//         position: absolute;
+//         top: 1.5rem;
+//         right: 1.5rem;
+//     }
+
+//     .nav {
+//         margin-top: 4.5rem;
+//         grid-area: navitems;
+//         display: flex;
+//         flex-direction: column;
+//         position: fixed;
+//         z-index: 100;
+//         top: 0;
+//         right: 0;
+//         width: 250px;
+//         height: 100vh;
+//         background-color: #fff;
+//         overflow-y: auto;
+//         overflow-x: hidden;
+//         -webkit-overflow-scrolling: touch;
+//         transition: 0.45s;
+
+//         transform: translateX(100%);
+
+//         &-items {
+//             flex: 0 0 100%;
+//         }
+
+//         &-item:not(:last-child) {
+//             border-bottom: 1px solid var(--clr-primary-100);
+//         }
+
+//         &-item a {
+//             display: block;
+//             padding: 0.75em 1em;
+//             background-color: white;
+//             color: var(--clr-primary-800);
+//             line-height: 1.5em;
+//             font-weight: var(--fw-regular);
+
+//         }
+
+//         &.open {
+//             transform: translateX(0);
+//         }
+//     }
+// }
+
+// @media (min-width: 769px) {
+    
+//     .nav {
+//         width: auto;
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-between;
+//     }
+
+//     .nav-hamburger {
+//         display: none;
+//     }
+    
+//     .nav-items {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         gap: 2rem;
+//     }
+// }
+
+
+.header.scrolling-active {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+
+    z-index: 999;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+
+    transition: 0.2s;
+}
